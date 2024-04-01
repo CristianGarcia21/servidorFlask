@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Representación gráfica</h1>
+    <p>Expresión regular: {{ regex }}</p>
+    {% if imagen %}
+      <img src="{{ url_for('static', filename='grafo.png') }}" alt="Grafo de la expresión regular">
+    {% else %}
+      <p>No se pudo generar la imagen para la expresión regular ingresada.</p>
+    {% endif %}
+  </body>
+</html>
