@@ -8,5 +8,7 @@
     {% else %}
       <p>No se pudo generar la imagen para la expresión regular ingresada.</p>
     {% endif %}
+    <form action="{{ url_for('home') }}" method="get">
+      <input type="submit" value="Volver al índice">
   </body>
 </html>

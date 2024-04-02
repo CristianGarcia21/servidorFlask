@@ -1,0 +1,18 @@
+digraph {
+	fake [style=invisible]
+	E [shape=doublecircle]
+	C
+	B
+	A [root=true]
+	D
+	fake -> A [style=bold]
+	E -> E [label=a]
+	A -> B [label=a]
+	C -> D [label=a]
+	D -> E [label=a]
+	E -> C [label=b]
+	B -> B [label=a]
+	A -> C [label=b]
+	B -> A [label=b]
+	rankdir=LR
+}
