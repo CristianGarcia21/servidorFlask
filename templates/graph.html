@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Expresiones Regulares</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Expresiones Regulares</h1>
+      </div>
+      <ul>
+        <li><a href="{{ url_for('home') }}" method="get">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <h1>Representación gráfica</h1>
-    <p>Expresión regular: {{ regex }}</p>
-    {% if imagen %}
-      <img src="{{ url_for('static', filename='grafo.png') }}" alt="Grafo de la expresión regular">
-    {% else %}
-      <p>No se pudo generar la imagen para la expresión regular ingresada.</p>
-    {% endif %}
-    <form action="{{ url_for('home') }}" method="get">
-      <input type="submit" value="Volver al índice">
+    <main class="main-content">
+      <h2 class="content-heading">Representación Gráfica</h2>
+      <p class="content-text">Expresión regular: {{ regex }}</p>
+      {% if imagen %}
+      <div class="image-container">
+        <img src="{{ url_for('static', filename='grafo.png') }}" alt="Grafo de la expresión regular">
+      </div>
+      {% else %}
+      <p class="content-text">No se pudo generar la imagen para la expresión regular ingresada.</p>
+      {% endif %}
+      <form action="{{ url_for('home') }}" method="get" class="form-container">
+        <button type="submit" class="btn">Volver al índice</button>
+      </form>
+    </main>
+  
+    <footer class="footer">
+      <p>&copy; 2024 Expresiones Regulares. Todos los derechos reservados.</p>
+      <p>Creado por: Juan Manuel Falla, Cristian Garcia y Daniel Osorio</p>
+    </footer>
   </body>
 </html>

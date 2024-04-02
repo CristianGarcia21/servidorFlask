@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Expresiones Regulares</title>
-  </head>
-  <body>
-    <h1>Ingresa una expresión regular</h1>
+<head>
+  <title>Expresiones Regulares</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Expresiones Regulares</h1>
+      </div>
+      <ul>
+        <li><a action="{{ url_for('home') }}" method="get">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h2>Crea tu propio autómata</h2>
+      <p>Escribe una expresión regular y nuestro poderoso motor la convertirá en un autómata.</p>
+      <p>Recuerda que si usas espacios la expresión regular será inválida.</p>
+    </div>
     <form method="post" action="{{ url_for('home') }}">
-      <input type="text" name="regex" placeholder="Expresión regular">
-      <select name="automaton_type">
-        <option value="NFA">NFA</option>
-        <option value="DFA">DFA</option>
-        <option value="DirectDFA">DirectDFA</option>
-      </select>
-      <input type="submit" value="Graficar">
+      <div class="input-group">
+        <input type="text" name="regex" placeholder="Expresión regular" required>
+        <select name="automaton_type" required>
+          <option value="" disabled selected>Selecciona un tipo</option>
+          <option value="NFA">NFA</option>
+          <option value="DFA">DFA</option>
+          <option value="DirectDFA">DirectDFA</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Graficar</button>
     </form>
-  </body>
+  </main>
+  <footer>
+    <p>&copy; 2024 Expresiones Regulares. Todos los derechos reservados.</p>
+    <p>Creado por: Juan Manuel Falla, Cristian Garcia y Daniel Osorio</p>
+  </footer>
+</body>
 </html>
