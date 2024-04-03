@@ -23,16 +23,16 @@ def home():
             tokens = reader.CreateTokens()
             parser = Parser(tokens)
             tree = parser.Parse()
-            if automaton_type == "DirectDFA":
+            if automaton_type == "AFD":
                 ddfa = DDFA(tree, reader.GetSymbols(), regex)
                 ddfa.GraphDFA()
 
                 return render_template('graph.html', regex=regex, imagen="grafo.png")
-            elif automaton_type == "NFA":
+            elif automaton_type == "AFND":
                 nfa = NFA(tree, reader.GetSymbols(), regex)
                 nfa.WriteNFADiagram()
                 return render_template('graph.html', regex=regex, imagen="grafo.png")
-            elif automaton_type == "DFA":
+            elif automaton_type == "DFAdfd":
                 nfa = NFA(tree, reader.GetSymbols(), regex)
                 dfa = DFA(nfa.trans_func, nfa.symbols,nfa.curr_state, nfa.accepting_states, regex)
                 dfa.TransformNFAToDFA()
